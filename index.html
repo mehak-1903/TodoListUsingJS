@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List App using JS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Todo List App</h1>
+    <div class="overlay">
+        <div class="container">
+        <h1>Todo List</h1>
+        <div class="todo-app">
+            <div class="row">
+                <input type="text" placeholder="Add any Task" id="input-box">
+                <button id="add-btn">Add</button>
+            </div>
+
+            <div class="buttons">
+                <button id="all">All</button>
+                <button id="completed">Completed</button>
+                <button id="incompleted">Incompleted</button>
+            </div>
+            <ul class="ul-container"></ul>
+        </div>
+    </div>
+    
+    </div>
 </body>
 <script type="text/javascript" src="index.js"></script>
 </html>
