@@ -25,6 +25,17 @@ function showTask(){
         
         li.textContent = task.text;  // li mei task dalre hai
 
+        // Step3. Adding deleting button and functionality into a list
+        const deleteBtn = document.createElement('i');
+        deleteBtn.className = 'fas fa-trash';
+
+        deleteBtn.addEventListener('click', () => {
+            tasks.splice(index, 1);
+
+            showTask();
+        })
+
+        li.appendChild(deleteBtn);
         taskList.appendChild(li);
     })
 }
