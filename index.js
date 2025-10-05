@@ -4,6 +4,31 @@ const taskList = document.querySelector('.ul-container');
 
 let tasks = [];
 
+// Step 6: saved task in the list even after reloading page
+
+function savedTask(){
+    localStorage.setItem("tasks", JSON.stringify(tasks));  // stores data in the browser's local storage.
+}
+
+const saveTask = localStorage.getItem('tasks'); // retrieves the saved tasks
+if(saveTask){
+    // if value in localstorage is not valid, then json gives an error.
+    // to fix this kinda errors we need to wrap the below code in try/catch block.
+    try{
+
+        const parsed = JSON.parse(saveTask); // Parse the string back into an array/object.
+        // Always ensures tasks is an array.
+        // if parsed value is actually an array(using Array.isArray(parsed))
+        if(Array.isArray(parsed)){
+            tasks = parsed;
+        }
+    }catch(e){
+        console.log('Error parsing tasks from localStorage', e);
+        tasks = [];
+    }
+    showTask()
+}
+
 addBtn.addEventListener('click', () => {
     // Step1. Taking input text , and checking value is valid or not and input field is empty
     const taskText = input.value.trim();
@@ -24,6 +49,8 @@ function showTask(){
         const li = document.createElement('li');
         
         li.textContent = task.text;  // inserting task to the list
+        // step7: after saving the task to localStorage (includes: done:true )
+        li.style.textDecoration = task.done ? 'line-through' : 'none';
 
         // Step3. Adding deleting button and functionality into a list
         const deleteBtn = document.createElement('i');
@@ -32,6 +59,7 @@ function showTask(){
         deleteBtn.addEventListener('click', () => {
             tasks.splice(index, 1);
 
+            savedTask();
             showTask();
         })
 
@@ -45,7 +73,9 @@ function showTask(){
 
             tasks[index].done = !tasks[index].done;
 
+            
             li.style.textDecoration = tasks[index].done ? 'line-through' : 'none';
+            savedTask();
         })
 
         // Step5: Edit Task
@@ -58,12 +88,13 @@ function showTask(){
             // Prompt user for new task text.
             const newText = prompt('Enter new Text here: ', task.text);
 
-            // Ifthe new task text is not null and not an empty string, then update task to the list. 
-            if(newText !== null && newText.trim() != ''){
+            // If the new task text is not null and not an empty string, then update task to the list. 
+            if(newText !== null && newText.trim() !== ''){
                 tasks[index].text = newText.trim();
             }
 
-            showTask()
+            savedTask();
+            showTask();
         })
 
         li.appendChild(editTask);
