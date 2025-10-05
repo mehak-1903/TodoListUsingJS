@@ -48,6 +48,25 @@ function showTask(){
             li.style.textDecoration = tasks[index].done ? 'line-through' : 'none';
         })
 
+        // Step5: Edit Task
+
+        const editTask = document.createElement('i');
+        editTask.className = 'fas fa-pen';
+        editTask.style.marginLeft = '-40px';
+
+        editTask.addEventListener('click', () => {
+            // Prompt user for new task text.
+            const newText = prompt('Enter new Text here: ', task.text);
+
+            // Ifthe new task text is not null and not an empty string, then update task to the list. 
+            if(newText !== null && newText.trim() != ''){
+                tasks[index].text = newText.trim();
+            }
+
+            showTask()
+        })
+
+        li.appendChild(editTask);
         li.appendChild(doneBtn);
         li.appendChild(deleteBtn);
         taskList.appendChild(li);
