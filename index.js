@@ -23,7 +23,7 @@ function showTask(){
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
         
-        li.textContent = task.text;  // li mei task dalre hai
+        li.textContent = task.text;  // inserting task to the list
 
         // Step3. Adding deleting button and functionality into a list
         const deleteBtn = document.createElement('i');
@@ -35,11 +35,11 @@ function showTask(){
             showTask();
         })
 
-        // Done Task.
+        // Step4: Done Task.
 
         const doneBtn = document.createElement('i');
         doneBtn.className = 'fas fa-check';
-        doneBtn.style.marginRight = '10px';
+        doneBtn.style.marginLeft = '-15px';
 
         doneBtn.addEventListener('click', () => {
 

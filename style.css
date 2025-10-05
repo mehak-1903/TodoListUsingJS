@@ -129,6 +129,8 @@ h1{
     display: flex;
     align-items: center;
     transition: 0.3s;
+    user-select: none;
+    position: relative;
 }
 
 .ul-container li:hover{
@@ -141,6 +143,9 @@ h1{
     margin-left: 12px;
     color: #d4b9b9;
     transition: 0.3s;
+    position: absolute;
+    left: 90%;
+    text-decoration: none;
 }
 
 .ul-container li i:hover{
