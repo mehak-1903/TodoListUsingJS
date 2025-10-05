@@ -35,6 +35,20 @@ function showTask(){
             showTask();
         })
 
+        // Done Task.
+
+        const doneBtn = document.createElement('i');
+        doneBtn.className = 'fas fa-check';
+        doneBtn.style.marginRight = '10px';
+
+        doneBtn.addEventListener('click', () => {
+
+            tasks[index].done = !tasks[index].done;
+
+            li.style.textDecoration = tasks[index].done ? 'line-through' : 'none';
+        })
+
+        li.appendChild(doneBtn);
         li.appendChild(deleteBtn);
         taskList.appendChild(li);
     })
