@@ -1,6 +1,7 @@
 const input = document.getElementById('input-box');
 const addBtn = document.getElementById('add-btn');
 const taskList = document.querySelector('.ul-container');
+const help = document.getElementById('help');
 
 let tasks = [];
 
@@ -103,3 +104,22 @@ function showTask(){
         taskList.appendChild(li);
     })
 }
+
+// Modal
+
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName('close')[0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(e){
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+}
+
+help.addEventListener('click', () => {
+    modal.style.display = 'block';
+})
