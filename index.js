@@ -10,7 +10,7 @@ const span = document.getElementsByClassName('close')[0];
 
 // Step14: Tabs
 const tabContent = document.querySelector('.tab-content');
-const updateBtn = document.querySelector('.update-tablink');
+const updateBtn = document.querySelector('.update-btn');
 let isTabLinksDoneVisible = false;  // variable for toggling content box will be visible or hidden.
 
 // Step2: make an empty array, who can store the input values
@@ -145,8 +145,12 @@ updateBtn.addEventListener('click', () => {
     //toggle: when the value of content tab is true - tabList will be appeared otherwise it will be hidden.
     isTabLinksDoneVisible = !isTabLinksDoneVisible;
 
+    // Step16: when we click on theme button then input field will be invisible.
+    input.style.display = isTabLinksDoneVisible ?  'none' : 'block';
+    addBtn.style.display = isTabLinksDoneVisible ?  'none' : 'block';
+
     //visible or hidden.
-    tabContent.style.display = isTabLinksDoneVisible ? 'block' : 'none';
+    tabContent.style.display = isTabLinksDoneVisible ? 'flex' : 'none';
 
     //take all the headings from tabContent div
     const headings = tabContent.querySelectorAll('h3');

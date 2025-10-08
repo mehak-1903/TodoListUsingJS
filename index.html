@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,63 +9,66 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="overlay">
         <div class="container">
-        <h1>Todo List</h1>
-        <div class="todo-app">
-            <div class="row">
-                <input type="text" placeholder="Add any Task" id="input-box">
-                <button id="add-btn">Add</button>
+            <h1>Todo List</h1>
+            <div class="todo-app">
+                <div class="row">
+                    <input type="text" placeholder="Add any Task" id="input-box">
+                    <button id="add-btn">Add</button>
+                </div>
+
+                <!-- Tabs -->
+                <div id="update" class="tab-content">
+                    <h3>Blue</h3>
+                    <h3>Green</h3>
+                    <h3>Brown</h3>
+                </div>
+
+                <!-- Help Button-->
+                <div class="buttons">
+                    <button id="help">Help</button>
+                    <button class="update-btn">Theme</button>
+                </div>
+
+
+                <!-- Todo List -->
+                <ul class="ul-container"></ul>
+
             </div>
 
-            <!-- <div class="buttons">
-                <button id="all">All</button>
-                <button id="completed">Completed</button>
-                <button id="incompleted">Incompleted</button>
-            </div> -->
-            <ul class="ul-container"></ul>
+
         </div>
 
-        <div class="buttons">
-            <button id="help">Help</button>
-        </div>
-    </div>
-    
     </div>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
 
         <!-- Modal Content -->
-         <div class="modal-content">
+        <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Help Section</h2>
             <h3>How to use the Todo App</h3>
             <p>Step1: Enter the task in text area.
-            <br/>Step2: Click on Add button.
-            Your list task will add in the listed below.
-            <br/>Step3: Make your List of daily tasks here.
-        <br/>Step4: Mark the task completed by clicking on done icon,
-        <br/>Step5: If you want to edit some task, you can edit it by clicking on edit/pencil icon.
-        Prompt will appear on your screen.
-        Enter the task into an input field and then either you can hit enter or clicking on ok button. 
-        Your text will be updated.
-        <br/>Step6: If you want to delete, click on delete icon to delete the task.
-    </p>
+                <br />Step2: Click on Add button.
+                Your list task will add in the listed below.
+                <br />Step3: Make your List of daily tasks here.
+                <br />Step4: Mark the task completed by clicking on done icon,
+                <br />Step5: If you want to edit some task, you can edit it by clicking on edit/pencil icon.
+                Prompt will appear on your screen.
+                Enter the task into an input field and then either you can hit enter or clicking on ok button.
+                Your text will be updated.
+                <br />Step6: If you want to delete, click on delete icon to delete the task.
+            </p>
 
-         </div>
+        </div>
     </div>
 
-    <!-- Tabs -->
-    <div class="tabs">
-        <button class="update-tablink">Theme</button>
-    </div>
-    <div id= "update" class="tab-content">
-        <h3>Blue Background.</h3>
-        <h3>Green Background.</h3>
-        <h3>Brown Background.</h3>
-    </div>
+
 </body>
 <script type="text/javascript" src="index.js"></script>
+
 </html>
